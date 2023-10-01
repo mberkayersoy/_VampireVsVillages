@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:ScrollView style="flex-direction: row; flex-wrap: wrap; align-items: stretch; justify-content: flex-start;">
+        <ui:VisualElement name="players-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-wrap: wrap;" />
+    </ui:ScrollView>
+    <ui:Button text="Add Player" display-tooltip-when-elided="true" name="add-player-button" style="position: absolute; bottom: 10px; left: 10px;" />
+    <ui:Button text="Next" display-tooltip-when-elided="true" name="next-button" style="position: absolute; bottom: 10px; right: 10px;" />
+</ui:UXML>

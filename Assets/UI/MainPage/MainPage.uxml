@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/utils.uss?fileID=7433441132597879392&amp;guid=8bc349ab76b0d67408cb5c9dcc0c5ca8&amp;type=3#utils" />
+    <ui:VisualElement class="align-center" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:Label tabindex="-1" text="V&amp;V" display-tooltip-when-elided="true" />
+        <ui:Button text="New Game" display-tooltip-when-elided="true" name="new-game-button" />
+    </ui:VisualElement>
+</ui:UXML>
