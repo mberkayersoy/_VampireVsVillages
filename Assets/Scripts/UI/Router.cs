@@ -9,6 +9,13 @@ public enum RouterPaths
     Main,
     AddPlayer,
     Roles,
+
+    //Game Pages
+    Start,
+    Day,
+    Vote,
+    Night,
+    End,
 }
 
 public class RouteChangedEvent

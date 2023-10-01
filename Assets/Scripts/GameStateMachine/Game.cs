@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game : MonoBehaviour
+public class Game
 {
     public List<Player> playerList;
 
@@ -15,7 +15,7 @@ public class Game : MonoBehaviour
     public Vote voteState;
     public End endState;
 
-    private void Start()
+    public Game()
     {
         SetState(startState);
     }

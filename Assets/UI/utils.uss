@@ -35,3 +35,7 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.selected-avatar {
+    translate: 0 -10px;
+}

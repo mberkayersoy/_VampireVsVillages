@@ -41,6 +41,17 @@ public class AddPlayer : MonoBehaviour
         {
             gameObject.GetComponentInParent<Router>().path = RouterPaths.Roles;
         };
+
+        this.OnPlayerAdded += (object sender, EventArgs a) =>
+        {
+            GameManager.Instance.AddNewPlayer();
+            RenderPlayers();
+        };
+
+        this.OnPlayerUpdated += (object sender, EventArgs a) =>
+        {
+            RenderPlayers();
+        };
     }
 
     public void OnEditPLayer(PlayerData player)
@@ -51,13 +62,14 @@ public class AddPlayer : MonoBehaviour
 
     public void onSavePlayer()
     {
-        Debug.Log("on clicked save " + editModal.GetPlayer());
         if (OnPlayerUpdated != null) OnPlayerUpdated?.Invoke(this, null);
         editModal.show = false;
     }
 
-    public void RenderPlayers(List<PlayerData> players)
+    public void RenderPlayers()
     {
+        List<PlayerData> players = GameManager.Instance.playersData;
+
         container.Clear();
 
         for (int i = 0; i < players.Count; i++)
