@@ -9,9 +9,9 @@ public class Hunter : Role
         Observe(player);
     }
 
-    public RoleEnum Observe(Player player)
+    public Roles Observe(Player player)
     {
-        return player.Role.RoleEnum;
+        return player.Role.Roles;
     }
 
 }
