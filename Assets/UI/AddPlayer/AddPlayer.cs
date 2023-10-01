@@ -36,6 +36,11 @@ public class AddPlayer : MonoBehaviour
         {
             if (OnPlayerAdded != null) OnPlayerAdded?.Invoke(this, null);
         };
+
+        nextButton.clicked += () =>
+        {
+            gameObject.GetComponentInParent<Router>().path = RouterPaths.Roles;
+        };
     }
 
     public void OnEditPLayer(PlayerData player)

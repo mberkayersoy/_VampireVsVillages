@@ -8,6 +8,7 @@ public enum RouterPaths
 {
     Main,
     AddPlayer,
+    Roles,
 }
 
 public class RouteChangedEvent
