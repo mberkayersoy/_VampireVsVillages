@@ -11,7 +11,7 @@ public class Hunter : Role
 
     public Roles Observe(Player player)
     {
-        return player.Role.Roles;
+        return player.Role.RoleType;
     }
 
 }

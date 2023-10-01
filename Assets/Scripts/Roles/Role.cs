@@ -7,9 +7,9 @@ using UnityEngine;
 public class Role 
 {
     protected string description;
-    private Roles roleEnum;
+    private Roles roleType;
 
-    public Roles RoleEnum { get => roleEnum;}
+    public Roles RoleType { get => RoleType;}
 
     public virtual void Ability(Player player) { }
 }
