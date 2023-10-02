@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField]
-    public List<PlayerData> playersData = new List<PlayerData>();
+    public List<PlayerData> playersDataList = new List<PlayerData>();
 
     [SerializeField]
     public List<RoleData> roles = new List<RoleData>(RoleData.AllRoles);
@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -53,7 +52,7 @@ public class GameManager : MonoBehaviour
 
             addPlayer.OnPlayerAdded += (object sender, EventArgs a) =>
             {
-                playersData.Add(new PlayerData());
+                playersDataList.Add(new PlayerData());
                 addPlayer.RenderPlayers();
             };
             addPlayer.OnPlayerUpdated += (object sender, EventArgs a) =>
@@ -66,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     public void AddNewPlayer()
     {
-        playersData.Add(new PlayerData());
+        playersDataList.Add(new PlayerData());
     }
 
 

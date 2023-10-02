@@ -10,7 +10,7 @@ public class Start : State
     }
     public override void OnEnter()
     {
-        game.playerList = MatchRolesWithPlayers(GameManager.Instance.players, RoleData.AllRoles);
+        game.playerList = MatchRolesWithPlayers(GameManager.Instance.playersDataList, GameManager.Instance.roles);
     }
 
     public List<Player> MatchRolesWithPlayers(List<PlayerData> playerDataList, List<RoleData> allRoleDatas)
@@ -33,7 +33,7 @@ public class Start : State
             Roles randomRole = remainingRoles[randomIndex];
             remainingRoles.RemoveAt(randomIndex);
 
-            Player player = new Player(playerData, new Role(randomRole));
+            Player player = new Player(playerData, Role.CreateRoleClass(randomRole));
             
             matchedPlayers.Add(player);
         }
@@ -46,8 +46,8 @@ public class Start : State
     {
         List<Roles> allRoles = new List<Roles>();
         // total villagers count;
-        RoleData villagers = new RoleData(Roles.Villager, GameManager.Instance.players.Count - GetRolesAmount());
-        RoleData.AllRoles.Add(villagers);
+        RoleData villagers = new RoleData(Roles.Villager, GameManager.Instance.playersDataList.Count - GetRolesAmount());
+        GameManager.Instance.roles.Add(villagers);
 
         foreach (RoleData roleData in allRoleDatas)
         {
@@ -63,7 +63,7 @@ public class Start : State
     public int GetRolesAmount()
     {
         int totalRole = 0;
-        foreach (RoleData roleData in RoleData.AllRoles)
+        foreach (RoleData roleData in GameManager.Instance.roles)
         {
             totalRole += roleData.count;
         }
