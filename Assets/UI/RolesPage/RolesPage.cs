@@ -37,10 +37,4 @@ public class RolesPage : MonoBehaviour
             Debug.Log("Next Clicked");
         };
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

@@ -18,10 +18,4 @@ public class MainPage : MonoBehaviour
         document = GetComponent<UIDocument>();
         newGame = document.rootVisualElement.Q<Button>("new-game-button");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

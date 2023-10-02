@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Hunter : Role
 {
+    public Hunter() : base(Roles.Observer)
+    {
+
+    }
     public override void Ability(Player player)
     {
         Observe(player);

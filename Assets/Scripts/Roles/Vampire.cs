@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Vampire : Role
 {
+    public Vampire() : base(Roles.Vampire)
+    {
+
+    }
     public override void Ability(Player player)
     {
         TryKill(player);

@@ -30,7 +30,6 @@ public class Player
             {
                 isAlive = false;
             }
-
         }
 
         protector = null;
