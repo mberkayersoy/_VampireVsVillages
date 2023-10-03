@@ -9,7 +9,6 @@ public class Role
     protected string description;
     protected Roles roleType;
 
-
     public Roles RoleType { get => roleType;}
 
     public Role(Roles roleType)
@@ -17,6 +16,22 @@ public class Role
         this.roleType = roleType;
     }
     public virtual void Ability(Player player) { }
+
+    public static Role CreateRoleClass(Roles roleType)
+    {
+        switch (roleType)
+        {
+            default:
+            case Roles.Villager:
+                return new Villager();
+            case Roles.Vampire:
+                return new Vampire();
+            case Roles.Doctor:
+                return new Doctor();
+            case Roles.Observer:
+                return new Hunter();
+        }
+    }
 }
 
 

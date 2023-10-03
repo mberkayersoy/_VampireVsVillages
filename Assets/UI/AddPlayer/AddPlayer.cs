@@ -68,7 +68,7 @@ public class AddPlayer : MonoBehaviour
 
     public void RenderPlayers()
     {
-        List<PlayerData> players = GameManager.Instance.playersData;
+        List<PlayerData> players = GameManager.Instance.playersDataList;
 
         container.Clear();
 
