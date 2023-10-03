@@ -35,7 +35,7 @@ public class PlayerAvatar : VisualElement
 
     public PlayerAvatar() {
         // Set UXML tree
-        VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/PlayerAvatar/PlayerAvatar.uxml");
+        VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/Components/PlayerAvatar/PlayerAvatar.uxml");
         asset.CloneTree(this);
         
         // Components

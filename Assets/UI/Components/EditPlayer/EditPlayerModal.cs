@@ -44,7 +44,7 @@ public class EditPlayerModal : VisualElement
     public EditPlayerModal()
     {
         // Set UXML tree
-        VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/EditPlayer/EditPlayer.uxml");
+        VisualTreeAsset asset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/UI/Components/EditPlayer/EditPlayer.uxml");
         asset.CloneTree(this);
 
         // Components

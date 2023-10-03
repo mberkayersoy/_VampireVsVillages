@@ -5,7 +5,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class AddPlayer : MonoBehaviour
+public class AddPlayerPage : MonoBehaviour
 {
     UIDocument document;
     VisualElement container;

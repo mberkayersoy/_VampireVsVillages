@@ -35,20 +35,15 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        MainPage = GameObject.Find("MainPageDocument").GetComponent<UIDocument>();
-        AddPlayer = GameObject.Find("AddPlayerDocument").GetComponent<UIDocument>();
+        // ...
+    }
 
+    public void NewGame()
+    {
+        router.path = RouterPaths.AddPlayer;
 
-        MainPage.GetComponent<MainPage>().newGame.clicked += () =>
-        {
-            router.path = RouterPaths.AddPlayer;
-
-            AddPlayer addPlayer = AddPlayer.GetComponent<AddPlayer>();
-            addPlayer.RenderPlayers();
-
-       
-        };
-
+        AddPlayerPage addPlayer = UIManager.Instance.addPlayerPage;
+        addPlayer.RenderPlayers();
     }
 
     public void AddNewPlayer()

@@ -17,5 +17,6 @@ public class MainPage : MonoBehaviour
     {
         document = GetComponent<UIDocument>();
         newGame = document.rootVisualElement.Q<Button>("new-game-button");
+        newGame.clicked += GameManager.Instance.NewGame;
     }
 }

@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
 
     public Router router;
+    public MainPage mainPage;
+    public AddPlayerPage addPlayerPage;
     public StartPage startPage;
     public NightPage nightPage;
     public VotePage votePage;
@@ -30,7 +32,10 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         router = GetComponent<Router>();
-        Debug.Log(router == null ? "Null router." : "Router found.");
+
+        mainPage = GetComponentInChildren<MainPage>();
+        addPlayerPage = GetComponentInChildren<AddPlayerPage>();
+
         startPage = GetComponentInChildren<StartPage>();
         nightPage = GetComponentInChildren<NightPage>();
         votePage = GetComponentInChildren<VotePage>();
