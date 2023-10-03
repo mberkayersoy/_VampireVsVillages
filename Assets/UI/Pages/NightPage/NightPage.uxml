@@ -1,10 +1,14 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/utils.uss?fileID=7433441132597879392&amp;guid=8bc349ab76b0d67408cb5c9dcc0c5ca8&amp;type=3#utils" />
     <ui:VisualElement name="show-role-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
-    <ui:VisualElement style="flex-grow: 1;">
+    <ui:VisualElement name="VisualElement" style="flex-grow: 1; display: flex;">
         <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
         <ui:VisualElement name="vote-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-wrap: wrap;" />
         <ui:Button text="Choose" display-tooltip-when-elided="true" name="choose-button" />
     </ui:VisualElement>
-    <ui:VisualElement name="hide-role-container" style="flex-grow: 1; background-color: rgb(0, 0, 0); position: absolute; left: 0; top: 0; right: 0; bottom: 0;" />
+    <ui:VisualElement name="hide-role-container" style="flex-grow: 1; background-color: rgb(82, 82, 82); position: absolute; left: 0; top: 0; right: 0; bottom: 0; display: flex; align-self: auto; justify-content: space-between; align-items: center;">
+        <ui:Label text="Telefonu sıradaki oyuncuya verin" display-tooltip-when-elided="true" name="title" style="-unity-font-style: bold; color: rgb(255, 255, 255); -unity-text-align: upper-center; top: 30%; align-items: auto; position: absolute;" />
+        <ui:Label display-tooltip-when-elided="true" name="next-player-label" style="position: absolute; width: 50%; top: 40%; left: auto; color: rgb(255, 255, 255); -unity-text-align: upper-center; right: auto; bottom: auto; -unity-font-style: bold; align-self: auto; justify-content: flex-start; align-items: auto; height: 10%;" />
+        <ui:Button text="Show Role" display-tooltip-when-elided="true" name="show-role-button" style="top: auto; visibility: visible; overflow: hidden; max-width: none; min-width: auto; min-height: auto; max-height: none; width: 50%; height: 10%; align-self: auto; bottom: 10%; position: absolute; -unity-font-style: bold;" />
+    </ui:VisualElement>
 </ui:UXML>

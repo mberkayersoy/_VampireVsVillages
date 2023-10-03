@@ -530,18 +530,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e30c541d36ada49aa0a3c69befae9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersData:
-  - Name: Utku
+  playersDataList:
+  - Name: 0
     Image: 
-  - Name: Berkay
+  - Name: 1
     Image: 
-  - Name: Ceren
+  - Name: 2
     Image: 
-  - Name: Emine
+  - Name: 3
     Image: 
-  - Name: Ece
+  - Name: 4
     Image: 
-  - Name: Cuma
+  - Name: 5
     Image: 
   roles:
   - role: 1
@@ -707,6 +707,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   router: {fileID: 0}
+  mainPage: {fileID: 0}
+  addPlayerPage: {fileID: 0}
   startPage: {fileID: 0}
   nightPage: {fileID: 0}
   votePage: {fileID: 0}
