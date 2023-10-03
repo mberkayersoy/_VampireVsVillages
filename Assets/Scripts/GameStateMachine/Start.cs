@@ -10,7 +10,7 @@ public class Start : State
     }
     public override void OnEnter()
     {
-        game.playerList = MatchRolesWithPlayers(GameManager.Instance.playersDataDataList, GameManager.Instance.roles);
+        game.playerList = MatchRolesWithPlayers(GameManager.Instance.playersDataList, GameManager.Instance.roles);
         GameManager.Instance.router.path = RouterPaths.Start;
 
         UIManager.Instance.startPage.nextbutton.clicked += Next;
