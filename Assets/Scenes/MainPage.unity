@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 7528b4e6204d6794b9ad7734970aa58c, type: 3}
   m_SortingOrder: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 8155e59f02cb36042997d2016c4c96e1, type: 3}
   m_SortingOrder: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 50405c7df7344bc4e995d7fdde14875e, type: 3}
   m_SortingOrder: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 12a6f9e6c609bfb44bffa48539a7b774, type: 3}
   m_SortingOrder: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: cbe9da4ac504d854082cd760a684b689, type: 3}
   m_SortingOrder: 0
@@ -530,18 +530,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e30c541d36ada49aa0a3c69befae9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersData:
-  - Name: Utku
+  playersDataList:
+  - Name: Utku uuuuuuuuuuuuuuuu
     Image: 
   - Name: Berkay
     Image: 
-  - Name: Ceren
-    Image: 
   - Name: Emine
     Image: 
-  - Name: Ece
+  - Name: Ceren
     Image: 
-  - Name: Cuma
+  - Name: Ece
     Image: 
   roles:
   - role: 1
@@ -550,8 +548,6 @@ MonoBehaviour:
     count: 1
   - role: 3
     count: 1
-  MainPage: {fileID: 0}
-  AddPlayer: {fileID: 0}
 --- !u!4 &1057753596
 Transform:
   m_ObjectHideFlags: 0
@@ -610,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 16d6b88eeca5ab84eb8eeb79f645b833, type: 3}
   m_SortingOrder: 0
@@ -707,6 +703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   router: {fileID: 0}
+  mainPage: {fileID: 0}
+  addPlayerPage: {fileID: 0}
   startPage: {fileID: 0}
   nightPage: {fileID: 0}
   votePage: {fileID: 0}
@@ -782,7 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: 3038b7bf02640924e8b07c91fd85ec9f, type: 2}
+  m_PanelSettings: {fileID: 11400000, guid: 93a17d80dd06b754a89b421edac0ede9, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: e834136459a1cc743a6c8af806bcaf6f, type: 3}
   m_SortingOrder: 0

@@ -75,6 +75,7 @@ public class AddPlayerPage : MonoBehaviour
         for (int i = 0; i < players.Count; i++)
         {
             PlayerAvatar b = new PlayerAvatar();
+            b.AddToClassList("avatar-container");
             b.player = players[i];
             b.clicked += (object sender, ClickEvent e) =>
             {

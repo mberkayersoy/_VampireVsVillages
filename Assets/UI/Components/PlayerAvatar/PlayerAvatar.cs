@@ -12,8 +12,8 @@ public class PlayerAvatar : VisualElement
     public new class UxmlFactory : UxmlFactory<PlayerAvatar> { }
 
     // Components
-    protected VisualElement ImageField;
-    protected Label NameField;
+    public VisualElement ImageField;
+    public Label NameField;
 
     // Data
     public PlayerData _player;

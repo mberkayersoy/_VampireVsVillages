@@ -8,7 +8,7 @@ public class VoteAvatar : VisualElement
 {
     public new class UxmlFactory : UxmlFactory<VoteAvatar> { }
 
-    public VoteAvatar() { }
+    public VoteAvatar() { Init(); }
 
     private Player player;
     private int vote = 0;
@@ -24,14 +24,20 @@ public class VoteAvatar : VisualElement
 
     public VoteAvatar(Player p)
     {
+        Init();
+        SetPlayer(p);
+    }
+
+    public void Init()
+    {
+        this.AddToClassList("avatar-container");
         playerAvatar = new PlayerAvatar();
+        playerAvatar.ImageField.AddToClassList("avatar-image");
         voteLabel = new Label();
         voteLabel.style.flexGrow = 0;
 
         this.Add(playerAvatar);
         this.playerAvatar.Add(voteLabel);
-
-        SetPlayer(p);
     }
 
     public void SetPlayer(Player p)
