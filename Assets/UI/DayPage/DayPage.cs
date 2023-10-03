@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class StartPage : MonoBehaviour
+public class DayPage : MonoBehaviour
 {
     public UIDocument document;
     public Button nextbutton;
 
-    // Start is called before the first frame update
     void Start()
     {
+        document = GetComponent<UIDocument>();
         nextbutton = document.rootVisualElement.Q<Button>("next-button");
     }
 }

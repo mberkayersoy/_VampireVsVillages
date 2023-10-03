@@ -17,6 +17,12 @@ public class Game
 
     public Game()
     {
+        startState = new(this);
+        dayState = new(this); ;
+        nightState = new(this);
+        voteState = new(this);
+        endState = new(this);
+
         SetState(startState);
     }
 

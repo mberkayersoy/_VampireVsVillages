@@ -35,6 +35,7 @@ public class RolesPage : MonoBehaviour
         nextButton.clicked += () =>
         {
             Debug.Log("Next Clicked");
+            GameManager.Instance.CreateGame();
         };
     }
 }

@@ -10,7 +10,10 @@ public class Start : State
     }
     public override void OnEnter()
     {
-        game.playerList = MatchRolesWithPlayers(GameManager.Instance.players, RoleData.AllRoles);
+        game.playerList = MatchRolesWithPlayers(GameManager.Instance.playersData, RoleData.AllRoles);
+        GameManager.Instance.router.path = RouterPaths.Start;
+
+        UIManager.Instance.startPage.nextbutton.clicked += Next;
     }
 
     public List<Player> MatchRolesWithPlayers(List<PlayerData> playerDataList, List<RoleData> allRoleDatas)
@@ -46,7 +49,7 @@ public class Start : State
     {
         List<Roles> allRoles = new List<Roles>();
         // total villagers count;
-        RoleData villagers = new RoleData(Roles.Villager, GameManager.Instance.players.Count - GetRolesAmount());
+        RoleData villagers = new RoleData(Roles.Villager, GameManager.Instance.playersData.Count - GetRolesAmount());
         RoleData.AllRoles.Add(villagers);
 
         foreach (RoleData roleData in allRoleDatas)
@@ -72,8 +75,13 @@ public class Start : State
 
     public override void OnExit()
     {
+      
+        UIManager.Instance.startPage.nextbutton.clicked -= Next;
+    }
+
+    public void Next()
+    {
         // To do: if options night or day.
-        //game.SetState(game.nightState);
-        game.SetState(game.dayState);
+        game.SetState(game.nightState);
     }
 }

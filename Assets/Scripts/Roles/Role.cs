@@ -10,7 +10,7 @@ public class Role
     protected Roles roleType;
 
 
-    public Roles RoleType { get => RoleType;}
+    public Roles RoleType { get => roleType;}
 
     public Role(Roles roleType)
     {
