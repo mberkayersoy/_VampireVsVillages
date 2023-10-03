@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,8 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public List<RoleData> roles = new List<RoleData>(RoleData.AllRoles);
 
-    public UIDocument MainPage;
-    public UIDocument AddPlayer;
     public Router router => UIManager.Instance.router;
     public Game game;
 

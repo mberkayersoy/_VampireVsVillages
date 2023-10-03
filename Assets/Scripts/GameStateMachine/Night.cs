@@ -18,8 +18,7 @@ public class Night : State
         base.OnEnter();
         UIManager.Instance.router.path = RouterPaths.Night;
 
-        index = -1;
-        Next(null);
+        RenderAbilityPage(0);
         nightPage.OnChoose += Next;
     }
 
@@ -32,20 +31,31 @@ public class Night : State
     public void Next(Player p)
     {
         // TODO: Night activites...
+        // Apply Ability
+        if (p != null)
+        {
+            currentPlayer.Role.Ability(p);
+        }
+
+        // Move to next player
         if (index < game.playerList.Count - 1)
         {
-            index += 1;
-            currentPlayer = game.playerList[index];
-
-            if (currentPlayer.Role.RoleType == Roles.Vampire)
-                nightPage.RenderPlayerVote(currentPlayer, game.playerList);
-            else
-                nightPage.RenderNoActivity(currentPlayer);
-
+            RenderAbilityPage(index + 1);
             return;
         }
 
         // On night activites end
         game.SetState(game.dayState);
+    }
+
+    public void RenderAbilityPage(int i)
+    {
+        index = i;
+        currentPlayer = game.playerList[index];
+
+        if (currentPlayer.Role.RoleType == Roles.Vampire)
+            nightPage.RenderPlayerVote(currentPlayer, game.playerList);
+        else
+            nightPage.RenderNoActivity(currentPlayer);
     }
 }

@@ -15,7 +15,8 @@ public class Vampire : Role
 
     private void TryKill(Player player)
     {
-        player.Attacker = this;
+        Debug.Log("Selected player: " + player.PlayerData.Name);
+        //player.Attacker = this;
     }
 
 
