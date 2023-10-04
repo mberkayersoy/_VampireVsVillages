@@ -11,13 +11,13 @@ public class VotingInput : VisualElement
     public new class UxmlFactory : UxmlFactory<VotingInput> { }
 
     public VotingInput() { Init(); }
-    public List<Player> players;
+    public List<VoteData> votes;
 
     // Events
     public delegate void OnChangeEvent(Player player);
     public event OnChangeEvent OnChange;
 
-    public VotingInput(List<Player> p) {
+    public VotingInput(List<VoteData> p) {
         Init();
         SetPlayers(p);
     }
@@ -29,23 +29,25 @@ public class VotingInput : VisualElement
         this.AddToClassList("voting-input");
     }
 
-    public void SetPlayers(List<Player> p, Player selected = null)
+    public void SetPlayers(List<VoteData> v, Player selected = null)
     {
-        players = p;
+        votes = v;
 
         this.Clear();
-        foreach (Player player in players)
+        foreach (VoteData vote in votes)
         {
-            VoteAvatar avatar = new VoteAvatar(player);
+            VoteAvatar avatar = new VoteAvatar(vote.player);
             avatar.clicked += (object sender, ClickEvent e) =>
             {
-                OnSelectPlayer(player);
+                OnSelectPlayer(vote.player);
             };
 
-            if (player == selected)
+            if (vote.player == selected)
             {
                 avatar.SetIsSelected(true);
             }
+
+            avatar.SetVoteCount(vote.count);
 
             this.Add(avatar);
         }

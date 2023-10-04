@@ -7,10 +7,11 @@ public class Start : State
 {
     public Start(Game sm) : base(sm)
     {
+        game.playerList = MatchRolesWithPlayers(GameManager.Instance.playersDataList, GameManager.Instance.roles);
     }
+
     public override void OnEnter()
     {
-        game.playerList = MatchRolesWithPlayers(GameManager.Instance.playersDataList, GameManager.Instance.roles);
         GameManager.Instance.router.path = RouterPaths.Start;
 
         UIManager.Instance.startPage.nextbutton.clicked += Next;
@@ -82,6 +83,6 @@ public class Start : State
     public void Next()
     {
         // To do: if options night or day.
-        game.SetState(game.nightState);
+        game.SetState(game.dayState);
     }
 }

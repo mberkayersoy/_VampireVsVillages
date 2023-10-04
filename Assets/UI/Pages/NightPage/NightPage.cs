@@ -46,12 +46,12 @@ public class NightPage : MonoBehaviour
 
         SetRole(p.Role.RoleType);
 
-        input.SetPlayers(players);
-        input.OnChange += (Player player) =>
-        {
-            selectedPlayer = player;
-            input.SetPlayers(players, selectedPlayer);
-        };
+        //input.SetPlayers(players);
+        //input.OnChange += (Player player) =>
+        //{
+        //    selectedPlayer = player;
+        //    input.SetPlayers(players, selectedPlayer);
+        //};
     }
 
     public void RenderNoActivity(Player p)

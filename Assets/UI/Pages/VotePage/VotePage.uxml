@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/utils.uss?fileID=7433441132597879392&amp;guid=8bc349ab76b0d67408cb5c9dcc0c5ca8&amp;type=3#utils" />
     <ui:VisualElement style="flex-grow: 1;">
-        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+        <ui:VisualElement name="show-user-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
         <ui:VisualElement name="vote-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; flex-wrap: wrap;" />
         <ui:Button text="Choose" display-tooltip-when-elided="true" name="choose-button" />
     </ui:VisualElement>

@@ -34,6 +34,7 @@ public class Night : State
         // Apply Ability
         if (p != null)
         {
+            Debug.Log("Player not null.");
             currentPlayer.Role.Ability(p);
         }
 

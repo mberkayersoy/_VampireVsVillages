@@ -17,7 +17,8 @@ public class VoteAvatar : VisualElement
     private PlayerAvatar playerAvatar;
     public Label voteLabel;
 
-    public event EventHandler<ClickEvent> clicked {
+    public event EventHandler<ClickEvent> clicked
+    {
         add { playerAvatar.clicked += value; }
         remove { playerAvatar.clicked -= value; }
     }
@@ -49,7 +50,15 @@ public class VoteAvatar : VisualElement
     public void SetVoteCount(int v)
     {
         vote = v;
-        voteLabel.text = vote.ToString();
+        if (v > 0)
+        {
+            voteLabel.text = vote.ToString();
+        }
+        else
+        {
+            voteLabel.text = "";
+        }
+
     }
 
     public void SetIsSelected(bool s)
@@ -58,7 +67,8 @@ public class VoteAvatar : VisualElement
         if (isSelected)
         {
             this.AddToClassList("selected-avatar");
-        } else
+        }
+        else
         {
             this.RemoveFromClassList("selected-avatar");
         }

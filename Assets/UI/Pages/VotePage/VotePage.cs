@@ -10,7 +10,9 @@ public class VotePage : MonoBehaviour
     Button chooseButton;
     VotingInput input;
 
-    public Player selectedPlayer;
+    private Player currentPlayer;
+    private Player selectedPlayer;
+    private List<VoteData> votes;
 
     public delegate void OnChooseEvent(Player player);
     public event OnChooseEvent OnChoose;
@@ -22,25 +24,33 @@ public class VotePage : MonoBehaviour
         chooseButton = document.rootVisualElement.Q<Button>("choose-button");
 
         input = new VotingInput();
-        voteContainer.Add(input);
-
-        chooseButton.clicked += OnSelectionEnd;
-    }
-
-    public void RenderPlayerVote(List<Player> players)
-    {
-        selectedPlayer = null;
-
-        input.SetPlayers(players);
         input.OnChange += (Player player) =>
         {
             selectedPlayer = player;
-            input.SetPlayers(players, selectedPlayer);
+            input.SetPlayers(votes, selectedPlayer);
         };
+
+        voteContainer.Add(input);
+
+        chooseButton.clicked += OnSelectionEnd;
+
+        selectedPlayer = null;
+
     }
+
+    public void RenderPlayerVote(Player p, List<VoteData> v)
+    {
+        votes = v;
+        currentPlayer = p;
+        selectedPlayer = null;
+
+        input.SetPlayers(votes);
+    }
+
 
     public void OnSelectionEnd()
     {
         OnChoose.Invoke(selectedPlayer);
+        selectedPlayer = null;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Day : State
@@ -14,13 +15,15 @@ public class Day : State
     {
         base.OnEnter();
         UIManager.Instance.router.path = RouterPaths.Day;
-        page.nextbutton.clicked += Next;
+
+        page.StartTimer(10);
+        page.OnConversationEnd += Next;
     }
 
     public override void OnExit()
     {
         base.OnExit();
-        page.nextbutton.clicked -= Next;
+        page.OnConversationEnd -= Next;
     }
 
     public void Next()
