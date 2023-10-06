@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,10 +11,12 @@ public class Player
     private bool isDead;
     private Role attacker;
     private Role protector;
+
     public Player (PlayerData playerData, Role role)
     {
         this.playerData = playerData;
         this.role = role;
+        role.MyPlayer = this;
     }
 
     public bool IsDead { get => isDead; set => isDead = value; }
@@ -26,15 +29,22 @@ public class Player
     {
         if (attacker != null)
         {
-            if (protector == null)
+            if (protector != null)
             {
+                Debug.Log(protector.RoleType + " successfully protect " + playerData.Name + " from vampire.");
+            }
+            else
+            {
+                // to do: Give info => Vampire killed playerData.Name
                 isDead = true;
+                Debug.Log(attacker.RoleType + " killed " + playerData.Name);
             }
         }
+
 
         protector = null;
         attacker = null;
 
-        return false;
+        return isDead;
     }
 }

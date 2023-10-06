@@ -15,9 +15,22 @@ public class Vampire : Role
 
     private void TryKill(Player player)
     {
-        Debug.Log("Selected player: " + player.PlayerData.Name);
         player.Attacker = this;
+        Debug.Log("Vampire Attacked + " + player.PlayerData.Name);
     }
 
+    public override List<Player> GetAccessiblePlayers(List<Player> playerList)
+    {
+        List<Player> accessiblePlayer = new List<Player>();
+        foreach (Player player in playerList)
+        {
+            if (player.Role.RoleType != roleType && !player.IsDead)
+            {
+                accessiblePlayer.Add(player);
+            }
+        }
+
+        return accessiblePlayer;
+    }
 
 }
