@@ -1,0 +1,45 @@
+:root {
+    --body-bg: gray;
+    --body-constrast: white;
+    --primary-contrast: white;
+    
+    --primary-color: rgb(55, 77, 208);
+    --primary-color-light: rgb(63, 84, 211);
+
+    --border-color: black;
+    --border-radius: 4px;
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 16px;
+}
+
+VisualElement#screen {
+}
+
+Button.unity-button {
+    background-color: var(--primary-color);
+    color: var(--primary-contrast);
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    transition-property: background-color, color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.25s;
+
+    outline: none;
+}
+
+    Button.unity-button:hover {
+        border-color: var(--primary-color);
+        background-color: var(--primary-color-light);
+    }
+
+Label.unity-label {
+    color: var( --body-constrast);
+}
+
+TextField {
+}
+
+ScrollView {
+}

@@ -25,6 +25,7 @@ public class DayPage : MonoBehaviour
 
 
         addTimeButton.clicked += AddTime;
+        nextbutton.clicked += EndArgument;
     }
 
     void Update()
