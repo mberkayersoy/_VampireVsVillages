@@ -1,13 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Night : State
 {
-
     NightPage nightPage;
     Player currentPlayer;
     int index = 0;
+    public event EventHandler<OnPlayerDeadActionEventArgs> OnPlayerDeadAction;
+    public class OnPlayerDeadActionEventArgs : EventArgs
+    {
+        public Player deadPlayer;
+    }
 
     public Night(Game sm) : base(sm)
     {
@@ -20,12 +25,6 @@ public class Night : State
 
         RenderAbilityPage(0);
         nightPage.OnChoose += Next;
-    }
-
-    public override void OnExit()
-    {
-        base.OnExit();
-        nightPage.OnChoose -= Next;
     }
 
     public void Next(Player p)
@@ -45,7 +44,8 @@ public class Night : State
         }
 
         // On night activites end
-        game.SetState(game.dayState);
+        //game.SetState(game.dayState);
+        game.SetState(game.informationState);
     }
 
     public void RenderAbilityPage(int i)
@@ -53,9 +53,35 @@ public class Night : State
         index = i;
         currentPlayer = game.playerList[index];
 
-        if (currentPlayer.Role.RoleType == Roles.Vampire)
-            nightPage.RenderPlayerVote(currentPlayer, game.playerList);
+        if (currentPlayer.Role.RoleType != Roles.Villager)
+            nightPage.RenderPlayerVote(currentPlayer, currentPlayer.Role.GetAccessiblePlayers(game.playerList));
         else
             nightPage.RenderNoActivity(currentPlayer);
+    }
+
+    public override void OnExit()
+    {
+        bool isPlayerDead = false;
+        foreach (Player player in game.playerList)
+        {
+            if (player.CheckIsDead())
+            {
+                OnPlayerDeadAction?.Invoke(this, new OnPlayerDeadActionEventArgs
+                {
+                    deadPlayer = player
+                });
+                isPlayerDead = true;
+            }
+        }
+        if (!isPlayerDead)
+        {
+            OnPlayerDeadAction?.Invoke(this, new OnPlayerDeadActionEventArgs
+            {
+                deadPlayer = null
+            });
+        }
+
+
+        nightPage.OnChoose -= Next;
     }
 }

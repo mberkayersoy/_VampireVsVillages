@@ -5,15 +5,17 @@ using UnityEngine;
 public class Game
 {
     public List<Player> playerList;
-
+    public List<Player> deadPlayerList;
 
     // STATES
+    public State previousState;
     public State currentState;
     public Start startState;
     public Day dayState;
     public Night nightState;
     public Vote voteState;
     public End endState;
+    public Information informationState;
 
     public Game()
     {
@@ -22,6 +24,7 @@ public class Game
         nightState = new(this);
         voteState = new(this);
         endState = new(this);
+        informationState = new(this);
 
         SetState(startState);
     }
@@ -31,8 +34,10 @@ public class Game
         if (currentState != null)
         {
             currentState.OnExit();
+            previousState = currentState;
         }
         currentState = newState;
         currentState.OnEnter();
+        Debug.Log("CURRENT STATE : " + currentState);
     }
 }

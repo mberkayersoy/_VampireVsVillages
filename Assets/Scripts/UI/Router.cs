@@ -16,6 +16,7 @@ public enum RouterPaths
     Vote,
     Night,
     End,
+    Information
 }
 
 public class RouteChangedEvent
@@ -28,7 +29,7 @@ public class RouteChangedEvent
 public class Router : MonoBehaviour
 {
     public event EventHandler<RouteChangedEvent> OnPathChange;
-    protected RouterPaths _path = RouterPaths.Main;
+    [SerializeField] protected RouterPaths _path = RouterPaths.Main;
     public RouterPaths path
     {
         get { return _path; }

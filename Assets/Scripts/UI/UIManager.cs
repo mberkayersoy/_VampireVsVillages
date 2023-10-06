@@ -13,11 +13,10 @@ public class UIManager : MonoBehaviour
     public NightPage nightPage;
     public VotePage votePage;
     public DayPage dayPage;
-
+    public InformationPage informationPage;
 
     private void Awake()
     {
-
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -28,7 +27,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         router = GetComponent<Router>();
@@ -40,5 +38,6 @@ public class UIManager : MonoBehaviour
         nightPage = GetComponentInChildren<NightPage>();
         votePage = GetComponentInChildren<VotePage>();
         dayPage = GetComponentInChildren<DayPage>();
+        informationPage = GetComponentInChildren<InformationPage>();
     }
 }

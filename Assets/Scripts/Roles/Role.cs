@@ -3,19 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
+[Serializable]
 public class Role
 {
     protected string description;
     protected Roles roleType;
+    [SerializeReference]
+    protected Player myPlayer;
 
     public Roles RoleType { get => roleType;}
+    public Player MyPlayer { get => myPlayer; set => myPlayer = value; }
 
     public Role(Roles roleType)
     {
         this.roleType = roleType;
     }
     public virtual void Ability(Player player) { }
+    public virtual List<Player> GetAccessiblePlayers(List<Player> playerList) 
+    {
+        List<Player> accessiblePlayer = new List<Player>();
+        foreach (Player player in playerList)
+        {
+            if (!player.IsDead)
+            {
+                accessiblePlayer.Add(player);
+            }
+        }
+
+        return playerList; 
+    }
 
     public static Role CreateRoleClass(Roles roleType)
     {

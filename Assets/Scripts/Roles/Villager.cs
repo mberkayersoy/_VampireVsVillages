@@ -13,4 +13,8 @@ public class Villager : Role
         // Should never work
         Debug.LogError("Villager Ability");
     }
+    public override List<Player> GetAccessiblePlayers(List<Player> playerList)
+    {
+        return base.GetAccessiblePlayers(playerList);
+    }
 }
