@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class NightPage : MonoBehaviour
 {
@@ -15,7 +17,9 @@ public class NightPage : MonoBehaviour
     RolesAvatar roleAvatar;
     VotingInput input;
 
-    public Player selectedPlayer;
+    private Player currentPlayer;
+    private Player selectedPlayer;
+    private List<VoteData> votes;
 
     public delegate void OnChooseEvent(Player player);
     public event OnChooseEvent OnChoose;
@@ -35,6 +39,12 @@ public class NightPage : MonoBehaviour
         chooseButton.clicked += OnSelectionEnd;
         showRoleButton.clicked += ShowRoleButton_clicked;
 
+        input.OnChange += (Player player) =>
+        {
+            selectedPlayer = player;
+            input.SetPlayers(votes, selectedPlayer);
+        };
+
     }
 
     public void RenderPlayerVote(Player p, List<Player> players)
@@ -42,16 +52,14 @@ public class NightPage : MonoBehaviour
         hideRoleContainer.style.display = DisplayStyle.Flex;
         input.style.display = DisplayStyle.Flex;
         nextPlayerNameLabel.text = p.PlayerData.Name;
+        currentPlayer = p;
         selectedPlayer = null;
 
         SetRole(p.Role.RoleType);
 
-        //input.SetPlayers(players);
-        //input.OnChange += (Player player) =>
-        //{
-        //    selectedPlayer = player;
-        //    input.SetPlayers(players, selectedPlayer);
-        //};
+        votes = new List<VoteData>(players.Select(player => new VoteData(player)));
+        input.SetPlayers(votes);
+      
     }
 
     public void RenderNoActivity(Player p)
@@ -63,7 +71,7 @@ public class NightPage : MonoBehaviour
 
 
         SetRole(p.Role.RoleType);
-
+        currentPlayer = p;
     }
 
     public void OnShowRole(ClickEvent e)

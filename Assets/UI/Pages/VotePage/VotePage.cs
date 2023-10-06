@@ -38,7 +38,7 @@ public class VotePage : MonoBehaviour
 
     }
 
-    public void RenderPlayerVote(Player p, List<VoteData> v)
+     public void RenderPlayerVote(Player p, List<VoteData> v)
     {
         votes = v;
         currentPlayer = p;
